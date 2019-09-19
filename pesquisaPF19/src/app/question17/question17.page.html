@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      ESTUDO ELEITORAL 2019
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-radio-group>
+        <ion-list-header>
+          P.12.  Até que ano da escola o(a) você estudou? (ESPONTÂNEA E ÚNICA)
+        </ion-list-header>
+        <ion-item>
+            <ion-label>Analfabeto / até 3ª Série Fundamental</ion-label>
+            <ion-radio value="1" (ionSelect)="radioChecked(1)"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Primário completo / 	4ª Série Fundamental</ion-label>
+            <ion-radio value="2" (ionSelect)="radioChecked(2)"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Ginásio completo / Fundamental completo</ion-label>
+            <ion-radio value="3" (ionSelect)="radioChecked(3)"></ion-radio>
+          </ion-item>          
+
+          <ion-item>
+            <ion-label>Colegial completo / Médio completo</ion-label>
+            <ion-radio value="4" (ionSelect)="radioChecked(4)"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Superior completo</ion-label>
+            <ion-radio value="5" (ionSelect)="radioChecked(5)"></ion-radio>
+          </ion-item>          
+        </ion-radio-group>
+    </ion-list>
+  </ion-content>

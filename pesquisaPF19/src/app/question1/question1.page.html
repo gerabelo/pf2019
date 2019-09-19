@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      ESTUDO ELEITORAL 2019
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-radio-group>
+        <ion-list-header>
+          PF.1. Você tem título de eleitor?
+        </ion-list-header>
+    
+        <ion-item>
+          <ion-label>SIM</ion-label>
+          <ion-radio value="1" (ionSelect)="radioChecked(1)"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>NÃO</ion-label>
+          <ion-radio value="0" (ionSelect)="radioChecked(0)"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+  </ion-content>

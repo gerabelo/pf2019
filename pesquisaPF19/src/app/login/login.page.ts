@@ -1,0 +1,97 @@
+import { Component, OnInit } from '@angular/core';
+import { GlobalService } from '../global.service';
+import { Geoposition, Geolocation } from '@ionic-native/geolocation/ngx';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.page.html',
+  styleUrls: ['./login.page.scss'],
+})
+export class LoginPage implements OnInit {
+  constructor(
+    private global: GlobalService,
+    private geolocation: Geolocation,
+  ) {}
+
+  ngOnInit() {
+    // this.getGeolocation();
+    if (this.global.checkOperator()) {
+      this.global.gotoHome()
+    }
+  }
+
+  operator: string;
+
+  public login() {
+    if (this.operator == null) {
+      this.global.presentToast("Digite o nome do operador")
+    } else {
+      if (this.operator == 'ClearAllData') {
+        this.global.presentToast("Todos os dados locais foram removidos")
+        this.global.storageClear();
+        this.operator = null
+        this.global.gotoLogin();
+      } else {
+        if (this.operator == 'SendAllData') {
+          let resultados = []
+          this.global.storageGetAll().then((d) => {
+            for (let i=0;i < d[0].length;i++) {
+              console.log(d[0][i]+'_'+d[1][i])
+              resultados.push(String(d[0][i])+'_'+String(d[1][i]))
+            }
+            this.global.setResultados(resultados)
+            this.global.sendResultados(resultados,"http://192.168.0.180");
+          });          
+        } else {
+          if (this.operator.substring(0,7) == "http://") {
+            this.global.enableSendData()
+          } else {
+            this.global.disableSendData()
+          }
+          this.global.setOperator(this.operator);
+          this.global.gotoHome();    
+        }
+      }
+    }   
+  }
+
+  async getGeolocation()
+  {
+    this.geolocation.getCurrentPosition().then(
+      (resp) => {
+        this.global.setLat(resp.coords.latitude);
+        this.global.setLng(resp.coords.longitude);
+        this.global.setAcc(resp.coords.accuracy);
+    }).catch((error) => { 
+      let watchOptions = {
+        timeout : 3000,
+        maxAge: 0,
+        enableHighAccuracy: true
+      }
+
+      var watchID = navigator.geolocation.watchPosition((position) => {
+        if ((position as Geoposition).coords != undefined) {
+          var geoposition = (position as Geoposition);
+          this.global.storageSet('19',geoposition.coords.latitude);
+          this.global.storageSet('20',geoposition.coords.longitude);
+          this.global.storageSet('21',geoposition.coords.accuracy);
+        } else {
+          this.global.presentToast('falha ao obter posicao')
+        }
+        navigator.geolocation.clearWatch(watchID);
+      }, null , { enableHighAccuracy: true });
+        
+      // var watchID = this.geolocation.watchPosition(watchOptions);
+      // watchID.subscribe((position) => {
+      //   if ((position as Geoposition).coords != undefined) {
+      //     var geoposition = (position as Geoposition);
+        //   this.global.storageSet('19',geoposition.coords.latitude);
+        //   this.global.storageSet('20',geoposition.coords.longitude);
+        //   this.global.storageSet('21',geoposition.coords.accuracy);
+        // } else {
+      //     this.global.presentToast('falha ao obter posicao')
+      //   }
+      // });
+    });    
+  }
+}

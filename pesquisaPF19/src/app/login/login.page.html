@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        ESTUDO ELEITORAL 2019
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <div class="ion-padding ion-text-center">
+      Presidente Figueiredo          
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-input type="text" placeholder="Digite o nome do PESQUISADOR" [(ngModel)]="operator" text-center id="input" ></ion-input>
+      </ion-row>
+      <ion-row >
+        <ion-col>
+          <div class="ion-text-center">
+            <ion-button fill="outline" shape="round" color="blue" (click)="login()"> Entrar </ion-button>
+          </div>
+        </ion-col>      
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+        <ion-title class="ion-text-center">© CajuIdeas 2019</ion-title>
+      </ion-toolbar>
+</ion-footer>

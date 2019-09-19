@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      ESTUDO ELEITORAL 2019
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-radio-group>
+        <ion-list-header>
+          P.11. (CITE FAIXAS DE RENDA) Agora eu vou ler algumas faixas de renda e gostaria que você me dissesse qual delas representa sua renda FAMILIAR mensal, isto é, a soma da renda de todas as pessoas que moram no domicílio, inclusive você. Sua renda familiar mensal neste último mês foi? (LER FAIXAS DE RENDA) (ESTIMULADA E ÚNICA)  MOSTRE O CARTÃO 3
+        </ion-list-header>
+        <ion-item>
+            <ion-label>ATÉ R$ 788,00 (1 SM) – CLASSE E</ion-label>
+            <ion-radio value="1" (ionSelect)="radioChecked(1)"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>MAIS DE R$ 788,01 ATÉ R$ 1.576,00 (MAIS DE 1 SM A 2 SM) CLASSE E</ion-label>
+            <ion-radio value="2" (ionSelect)="radioChecked(2)"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>MAIS DE R$ 1.576,01 ATÉ R$ 3.940,00 (MAIS DE 2 SM A 5 SM) – CLASSE D</ion-label>
+            <ion-radio value="3" (ionSelect)="radioChecked(3)"></ion-radio>
+          </ion-item>          
+
+          <ion-item>
+            <ion-label>MAIS DE R$ 3.940,01 ATÉ R$ 7.880,00 (MAIS DE 5 SM A 10) – CLASSE C</ion-label>
+            <ion-radio value="4" (ionSelect)="radioChecked(4)"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>MAIS DE R$ 7.880,01 ATÉ R$ 15.760,00(MAIS DE 10SM A 20SM) – CLASSE B</ion-label>
+            <ion-radio value="5" (ionSelect)="radioChecked(5)"></ion-radio>
+          </ion-item>          
+
+          <ion-item>
+            <ion-label>MAIS DE R$ 15.760,01(ACIMA DE 20 SM) – CLASSE A</ion-label>
+            <ion-radio value="6" (ionSelect)="radioChecked(6)"></ion-radio>
+          </ion-item>          
+
+          <ion-item>
+            <ion-label>NÃO SABE /NÃO RESPONDEU</ion-label>
+            <ion-radio value="7" (ionSelect)="radioChecked(7)"></ion-radio>
+          </ion-item>
+
+        </ion-radio-group>
+    </ion-list>
+  </ion-content>

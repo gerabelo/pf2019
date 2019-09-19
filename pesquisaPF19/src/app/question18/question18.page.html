@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      ESTUDO ELEITORAL 2019
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-input type="text" placeholder="P.13. Digite o NOME do entrevistado" [(ngModel)]="nome" text-center id="nome" ></ion-input>
+    </ion-row>
+    <ion-row>
+      <ion-input type="number" placeholder="P.13. Digite o TELEFONE do entrevistado" [(ngModel)]="telefone" text-center id="telefone" ></ion-input>
+    </ion-row>
+    <ion-row>
+      <ion-input type="text" placeholder="P.13. Digite o BAIRRO do entrevistado" [(ngModel)]="bairro" text-center id="bairro" ></ion-input>
+    </ion-row>
+
+    <ion-row >
+      <ion-col>
+        <div class="ion-text-center">
+          <ion-button fill="outline" shape="round" color="blue" (click)="radioChecked()"> Encerrar </ion-button>
+        </div>
+      </ion-col>      
+    </ion-row>
+  </ion-grid>
+</ion-content>

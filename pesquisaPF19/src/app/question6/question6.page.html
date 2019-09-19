@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        ESTUDO ELEITORAL 2019
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+        <ion-radio-group>
+          <ion-list-header>
+            P.01. Como o(a) sr(a) AVALIA a administração do GOVERNADOR Wilson Lima ? Diria que está sendo:  LEIA ATÉ A INTERROGAÇÃO: (ESTIMULADA E ÚNICA)
+          </ion-list-header>
+          <ion-item>
+            <ion-label>ÓTIMO </ion-label>
+            <ion-radio value="5" (ionSelect)="radioChecked(5)"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>BOM </ion-label>
+            <ion-radio value="4" (ionSelect)="radioChecked(4)"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>REGULAR </ion-label>
+            <ion-radio value="3" (ionSelect)="radioChecked(3)"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>RUIM </ion-label>
+            <ion-radio value="2" (ionSelect)="radioChecked(2)"></ion-radio>
+          </ion-item>          
+
+          <ion-item>
+            <ion-label>PÉSSIMO </ion-label>
+            <ion-radio value="1" (ionSelect)="radioChecked(1)"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>NÃO SABE </ion-label>
+            <ion-radio value="0" (ionSelect)="radioChecked(0)"></ion-radio>
+          </ion-item>          
+        </ion-radio-group>
+      </ion-list>
+    </ion-content>
+  
