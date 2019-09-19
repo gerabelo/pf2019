@@ -51,7 +51,7 @@ app.post("/questionarios/", urlencodedParser, (req, res) => {
         linha = [];
         linha = element.split('_');
         if (linha.length == 4) {
-            // console.log(linha)
+            console.log(linha)
             // pesquisador = linha[0];
             // questionario = linha[1];
             // pergunta = linha[2];
@@ -67,7 +67,8 @@ app.post("/questionarios/", urlencodedParser, (req, res) => {
             op = linha[0];
         }
     });
-    Questionarios.create({pequisador: op,perguntas: ps,respostas: rs});
+    // console.log(op)
+    Questionarios.create({operador: op,perguntas: ps,respostas: rs});
 
     res.send("OK")
     console.log(date)
