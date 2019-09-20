@@ -10,7 +10,7 @@ export class Question11Page implements OnInit {
   slideOpts = {
     loop: true,
     autoplay:true,
-    // initialSlide: 1,
+    initialSlide: 1,
     speed: 400
   };
 
