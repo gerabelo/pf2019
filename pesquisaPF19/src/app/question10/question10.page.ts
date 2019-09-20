@@ -25,7 +25,12 @@ export class Question10Page implements OnInit {
   }
 
   radioChecked(value){
-    this.global.storageSet('10',value);
-    this.global.gotoQuestion('11');
+    if (value == 7) {
+      this.global.storageSet('10',value);
+      this.global.gotoQuestion('10a');
+    } else {
+      this.global.storageSet('10',value);
+      this.global.gotoQuestion('11');  
+    }
   }
 }

@@ -26,6 +26,9 @@ const routes: Routes = [
   { path: 'question17', loadChildren: './question17/question17.module#Question17PageModule' },
   { path: 'question18', loadChildren: './question18/question18.module#Question18PageModule' },
   { path: 'question13a', loadChildren: './question13a/question13a.module#Question13aPageModule' },
+  { path: 'question10a', loadChildren: './question10a/question10a.module#Question10aPageModule' },
+  { path: 'question11a', loadChildren: './question11a/question11a.module#Question11aPageModule' },
+  { path: 'question14a', loadChildren: './question14a/question14a.module#Question14aPageModule' },
 ];
 
 @NgModule({

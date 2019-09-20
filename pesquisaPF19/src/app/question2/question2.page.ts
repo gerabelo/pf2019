@@ -27,7 +27,7 @@ export class Question2Page implements OnInit {
       this.global.presentToast("Agradeça e Encerre")
       this.global.gotoHome()
     } else {
-      this.global.gotoQuestion('3')
+      this.global.gotoQuestion('4')
     }
   }
 }

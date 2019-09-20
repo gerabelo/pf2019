@@ -38,13 +38,19 @@
             </ion-item>          
 
             <ion-item>
+                <ion-label>Coleta de Lixo</ion-label>
+                <ion-radio value="6" (ionSelect)="radioChecked(6)"></ion-radio>
+              </ion-item>          
+  
+
+            <ion-item>
               <ion-label>Outro</ion-label>
-              <ion-radio value="6" (ionSelect)="radioChecked(6)"></ion-radio>
+              <ion-radio value="7" (ionSelect)="radioChecked(7)"></ion-radio>
             </ion-item>                      
 
             <ion-item>
               <ion-label>Não sabe</ion-label>
-              <ion-radio value="7" (ionSelect)="radioChecked(7)"></ion-radio>
+              <ion-radio value="99" (ionSelect)="radioChecked(99)"></ion-radio>
             </ion-item>                      
           </ion-radio-group>
       </ion-list>

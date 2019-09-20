@@ -12,14 +12,6 @@ export class Question8aPage implements OnInit {
 
   candidato: string;
 
-  ngOnInit() {
-    if (this.global.checkOperator()) {
-      console.log("OK")
-    } else {
-      this.global.gotoLogin()
-    }
-  }
-
   prosseguir(){
     if (this.candidato == null) {
       this.global.presentToast("Confirme o candidato!")
@@ -28,4 +20,13 @@ export class Question8aPage implements OnInit {
       this.global.gotoQuestion('10');
     }    
   }
+
+  ngOnInit() {
+    if (this.global.checkOperator()) {
+      console.log("OK")
+    } else {
+      this.global.gotoLogin()
+    }
+  }
+
 }

@@ -18,7 +18,7 @@ export class Question13Page implements OnInit {
   }
 
   radioChecked(value){
-    if (value == 6) {
+    if (value == 7) {
       this.global.gotoQuestion('13a');
     } else {
       this.global.storageSet('13',value);
