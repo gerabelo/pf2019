@@ -8,82 +8,130 @@
 
 <ion-content>
   <ion-list>
-      <ion-radio-group>
         <ion-list-header>
           P.05. Se as eleições para a PREFEITURA DE PRESIDENTE FIGUEIREDO fossem hoje e os candidatos fossem esses, em quem o senhor votaria? (MOSTRE CARTÃO DE CANDIDATOS)(ESTIMULADA E ÚNICA)
         </ion-list-header>
-        <ion-item>
-            <ion-avatar slot="start">
-              <img src="assets/imgs/FERNANDOVIEIRA.PNG">
-            </ion-avatar>
-            <ion-label>FERNANDO VIEIRA</ion-label>
-            <ion-radio value="0" (ionSelect)="radioChecked(0)"></ion-radio>
-          </ion-item>
+        <ion-slides pager="true" [options]="slideOpts">
+              <ion-slide>
+                <ion-card (click)="radioChecked(0)">
+                  <ion-card-header>
+                      <ion-card-title>
+                          FERNANDO VIEIRA
+                      </ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                      <img src="assets/imgs/FERNANDOVIEIRA.PNG">
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+          
+              <ion-slide>
+                  <ion-card (click)="radioChecked(1)">
+                    <ion-card-header>
+                        <ion-card-title>
+                            NEILSON CAVALCANTI
+                        </ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <img src="assets/imgs/NEILSONCAVALCANTI.PNG">
+                    </ion-card-content>
+                  </ion-card>
+                </ion-slide>
       
-          <ion-item>
-              <ion-avatar slot="start">
-                  <img src="assets/imgs/NEILSONCAVALCANTI.PNG">
-                </ion-avatar>
-            <ion-label>NEILSON CAVALCANTI</ion-label>
-            <ion-radio value="1" (ionSelect)="radioChecked(1)"></ion-radio>
-          </ion-item>
-  
-          <ion-item>
-              <ion-avatar slot="start">
-                  <img src="assets/imgs/ROMEIROMENDONCA.PNG">
-                </ion-avatar>
-            <ion-label>ROMEIRO MENDONÇA</ion-label>
-            <ion-radio value="2" (ionSelect)="radioChecked(2)"></ion-radio>
-          </ion-item>
-  
-          <ion-item>
-              <ion-avatar slot="start">
-                  <img src="assets/imgs/MARIOABRAHAO.PNG">
-                </ion-avatar>          
-            <ion-label>MARIO ABRAHÃO</ion-label>
-            <ion-radio value="3" (ionSelect)="radioChecked(3)"></ion-radio>
-          </ion-item>          
-  
-          <ion-item>
-              <ion-avatar slot="start">
-                  <img src="assets/imgs/RICELIPONTES.PNG">
-                </ion-avatar>          
-            <ion-label>RICELI PONTES</ion-label>
-            <ion-radio value="4" (ionSelect)="radioChecked(4)"></ion-radio>
-          </ion-item>
-  
-          <ion-item>
-              <ion-avatar slot="start">
-                  <img src="assets/imgs/DOUTORVINICIUS.PNG">
-                </ion-avatar>          
-            <ion-label>DOUTOR VINICIUS</ion-label>
-            <ion-radio value="5" (ionSelect)="radioChecked(5)"></ion-radio>
-          </ion-item>          
-  
-          <ion-item>
-              <ion-avatar slot="start">
-                  <img src="assets/imgs/CHICOPRETO.PNG">
-                </ion-avatar>                    
-            <ion-label>CHICO PRETO</ion-label>
-            <ion-radio value="6" (ionSelect)="radioChecked(6)"></ion-radio>
-          </ion-item>          
-  
-          <ion-item>
-              <ion-avatar slot="start">
-                  <img src="assets/imgs/OUTRO.PNG">
-                </ion-avatar>       
-            <ion-label>OUTRO</ion-label>
-            <ion-radio value="7" (ionSelect)="radioChecked(7)"></ion-radio>
-          </ion-item>
-  
-          <ion-item>
-              <ion-avatar slot="start">
-                  <img src="assets/imgs/NAOSABE.PNG">
-                </ion-avatar>       
-            <ion-label>NÃO SABE</ion-label>
-            <ion-radio value="99" (ionSelect)="radioChecked(99)"></ion-radio>
-          </ion-item>
-              </ion-radio-group>
+              <ion-slide>
+                <ion-card (click)="radioChecked(2)">
+                  <ion-card-header>
+                      <ion-card-title>
+                          ROMEIRO MENDONÇA
+                      </ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                      <img src="assets/imgs/ROMEIROMENDONCA.PNG">
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+      
+              <ion-slide>
+                <ion-card (click)="radioChecked(3)">
+                  <ion-card-header>
+                      <ion-card-title>
+                          MARIO ABRAHÃO
+                      </ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                      <img src="assets/imgs/MARIOABRAHAO.PNG">
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+      
+              <ion-slide>
+                <ion-card (click)="radioChecked(4)">
+                  <ion-card-header>
+                      <ion-card-title>
+                          RICELI PONTES
+                      </ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                      <img src="assets/imgs/RICELIPONTES.PNG">
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+      
+              <ion-slide>
+                <ion-card (click)="radioChecked(5)">
+                  <ion-card-header>
+                      <ion-card-title>
+                          DOUTOR VINICIUS
+                      </ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                      <img src="assets/imgs/DOUTORVINICIUS.PNG">
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+      
+              <ion-slide>
+                <ion-card (click)="radioChecked(6)">
+                  <ion-card-header>
+                      <ion-card-title>
+                          CHICO PRETO
+                      </ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                      <img src="assets/imgs/CHICOPRETO.PNG">
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+
+              <ion-slide>
+                  <ion-card (click)="radioChecked(7)">
+                    <ion-card-header>
+                        <ion-card-title>
+                            OUTRO
+                        </ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <img src="assets/imgs/OUTRO.PNG">
+                    </ion-card-content>
+                  </ion-card>
+                </ion-slide>
+      
+              <ion-slide>
+                <ion-card (click)="radioChecked(99)">
+                  <ion-card-header>
+                      <ion-card-title>
+                          NÃO SABE
+                      </ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                      <img src="assets/imgs/NAOSABE.PNG">
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+
+        </ion-slides>
+        
+              <!-- </ion-radio-group> -->
     </ion-list>
   </ion-content><ion-footer>
     <ion-toolbar>

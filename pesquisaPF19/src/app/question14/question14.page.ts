@@ -7,7 +7,13 @@ import { GlobalService } from '../global.service';
   styleUrls: ['./question14.page.scss'],
 })
 export class Question14Page implements OnInit {
-
+  slideOpts = {
+    loop: true,
+    autoplay:true,
+    // initialSlide: 1,
+    speed: 400
+  };
+  
   constructor(private global: GlobalService) { }
   ngOnInit() {
     if (this.global.checkOperator()) {

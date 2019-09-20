@@ -7,6 +7,12 @@ import { GlobalService } from '../global.service';
   styleUrls: ['./question10.page.scss'],
 })
 export class Question10Page implements OnInit {
+  slideOpts = {
+    loop: true,
+    autoplay:true,
+    // initialSlide: 1,
+    speed: 400
+  };
 
   constructor(private global: GlobalService) { }
 
