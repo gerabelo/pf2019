@@ -24,7 +24,7 @@ export class LoginPage implements OnInit {
 
   public login() {
     if (this.operator == null) {
-      this.global.presentToast("Digite o nome do operador")
+      this.global.presentToast("Digite o nome do pesquisador")
     } else {
       if (this.operator == 'ClearAllData') {
         this.global.presentToast("Todos os dados locais foram removidos")
