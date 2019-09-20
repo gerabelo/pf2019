@@ -106,11 +106,11 @@ export class GlobalService {
     this.http.post(url+'/questionarios/', { data }).subscribe(data => {
       this.presentToast("Dados enviados com sucesso")
      }, error => {
-      this.presentToast("Ocorreu uma falha ao enviar os dados.")
+      this.presentToast(error)
       this.http.get(url+'/questionarios/?data='+data).subscribe(data => {
         this.presentToast("Dados enviados com sucesso");
       }, error => {
-        this.presentToast("Ocorreu uma falha ao enviar os dados.")
+        this.presentToast(error)
       });      
     }); 
   }
