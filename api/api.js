@@ -30,16 +30,17 @@ app.listen(port, () => {
 
 app.get("/", (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin','*');
-	res.send("Welcome to PF2019 Receiver");
+	res.send("ESTUDO ELEITORAL 2019 - Presidente Figueiredo");
 });
 
 app.post("/questionarios/", urlencodedParser, (req, res) => {
-    var date = String(Date.now());    
-    arquivo = date.replace(":"," ").replace("."," ")+'.txt';
-    var data = JSON.stringify(req.body.data)
-    // console.log("recebendo questionarios por HTTP POST:\n");	
-    // console.log(data)
-    fs.writeFile(arquivo,data,function (err) { });
+    // var date = String(Date.now());    
+    // arquivo = date.replace(":"," ").replace("."," ")+'.txt';
+    // var data = JSON.stringify(req.body.data)
+    // // console.log("recebendo questionarios por HTTP POST:\n");	
+    // // console.log(data)
+    // fs.writeFile(arquivo,data,function (err) { });
+    // console.log(date)
 
     ps = [String];
     rs = [String];
@@ -47,6 +48,7 @@ app.post("/questionarios/", urlencodedParser, (req, res) => {
     questionarioOld = "1";
     linha = [String]
     op = "";
+
     req.body.data.forEach(element => {
         linha = [];
         linha = element.split('_');
@@ -71,13 +73,29 @@ app.post("/questionarios/", urlencodedParser, (req, res) => {
     Questionarios.create({operador: op,perguntas: ps,respostas: rs});
 
     res.send("OK")
-    console.log(date)
-    
+
 });
 
 app.get("/questionarios", (req, res) => {
-	// console.log("recebendo questionarios por HTTP GET:\n");	
-    // console.log(req.query.data)
+    var date = String(Date.now());    
+    arquivo = date.replace(":"," ").replace("."," ")+'.txt';
+    // var data = JSON.stringify(req.body.data)
+    var data = req.query.data
+    itens = [String]
+
+    itens = data.split(',')
+    qtd_a = itens[0].split('_')
+    qtd = qtd_a[1]
+
+    dados = itens.slice(1,itens.length)
+
+    for (i=0;i<4;i++) {
+
+    }
+    
+    // console.log(data)
+    fs.writeFile(arquivo,data,function (err) { });
+    console.log("qtd_a[1]: ",item)
     res.send("OK")
     // res.sendStatus(200)
 });

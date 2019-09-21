@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from '../global.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-question10a',
@@ -7,6 +8,11 @@ import { GlobalService } from '../global.service';
   styleUrls: ['./question10a.page.scss'],
 })
 export class Question10aPage implements OnInit {
+  constructor(
+    private global: GlobalService,
+    private alertCtrl: AlertController
+  ) { }
+
   candidato: string;
 
   prosseguir(){
@@ -17,9 +23,37 @@ export class Question10aPage implements OnInit {
       this.global.gotoQuestion('11');
     }    
   }
-  constructor(private global: GlobalService) { }
 
   ngOnInit() {
+    if (this.global.checkOperator()) {
+      console.log("OK")
+    } else {
+      this.global.gotoLogin()
+    }
+
   }
 
+  private async abortar() {
+    const alertAbortar = await this.alertCtrl.create({
+      backdropDismiss: false,
+      header: `Deseja ABORTAR esta entrevista?`, 
+      buttons: [
+        {
+          text: 'Não',
+          role: 'cancel',
+          cssClass: 'alert-cancel',
+          handler: () => {}
+        },
+        {
+          text: 'Sim',
+          handler: () => {
+            this.global.storageSet('18','ABORTADO');
+            this.global.storageSet('99',new Date().toISOString());
+            this.global.gotoHome();        
+          }
+        }
+      ]
+    });
+    return await alertAbortar.present();
+  }
 }

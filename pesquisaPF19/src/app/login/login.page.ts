@@ -20,7 +20,11 @@ export class LoginPage implements OnInit {
     }
   }
 
-  operator: string;
+  onPageWillEnter() {
+    this.operator = "";
+  }
+
+  operator: string = "";
 
   public login() {
     if (this.operator == null) {

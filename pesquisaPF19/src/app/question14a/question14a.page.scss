@@ -1,3 +1,12 @@
+ion-grid {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
 ion-input { font-size: 24px; }
 ion-button { margin-top: 50px; }
 ion-list-header { font-size: 20px; }
