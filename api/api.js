@@ -90,9 +90,9 @@ app.get("/questionarios", (req, res) => {
     dados = itens.slice(1,itens.length)
 
     for (i=0;i<4;i++) {
-
+        
     }
-    
+
     // console.log(data)
     fs.writeFile(arquivo,data,function (err) { });
     console.log("qtd_a[1]: ",item)

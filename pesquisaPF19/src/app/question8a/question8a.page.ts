@@ -47,6 +47,7 @@ export class Question8aPage implements OnInit {
         {
           text: 'Sim',
           handler: () => {
+            this.global.presentToast("A entrevista foi ABORTADA.")
             this.global.storageSet('18','ABORTADO');
             this.global.storageSet('99',new Date().toISOString());
             this.global.gotoHome();        

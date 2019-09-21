@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from '../global.service';
 import { Geoposition, Geolocation } from '@ionic-native/geolocation/ngx';
+import { AlertController, Platform, NavController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -8,10 +9,24 @@ import { Geoposition, Geolocation } from '@ionic-native/geolocation/ngx';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  subscribe: any;
+
   constructor(
     private global: GlobalService,
     private geolocation: Geolocation,
-  ) {}
+    private alertCtrl: AlertController,
+    private navCtrl: NavController,
+    private platform: Platform,
+    private toastCtrl: ToastController
+  ) {
+    this.subscribe = this.platform.backButton.subscribeWithPriority(6666666,() => {
+      if (this.constructor.name == "LoginPage") {
+        if (window.confirm("Deseja realmente SAIR da aplicação?")) {
+          navigator["app"].exitApp();
+        }
+      }
+    })
+  }
 
   ngOnInit() {
     // this.getGeolocation();
@@ -27,7 +42,7 @@ export class LoginPage implements OnInit {
   operator: string = "";
 
   public login() {
-    if (this.operator == null) {
+    if (this.operator == "") {
       this.global.presentToast("Digite o nome do pesquisador")
     } else {
       if (this.operator == 'ClearAllData') {
@@ -97,5 +112,12 @@ export class LoginPage implements OnInit {
       //   }
       // });
     });    
+  }
+
+  
+private sair() {
+    if (window.confirm("Deseja realmente SAIR da aplicação?")) {
+      navigator["app"].exitApp();
+    }
   }
 }
