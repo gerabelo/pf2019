@@ -27,7 +27,7 @@ export class Question5Page implements OnInit {
     this.global.gotoQuestion('6');
   }
   
-  private async abortar() {
+  private async sair() {
     const alertAbortar = await this.alertCtrl.create({
       backdropDismiss: false,
       header: `Deseja ABORTAR esta entrevista?`, 

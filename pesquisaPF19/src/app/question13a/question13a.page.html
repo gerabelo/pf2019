@@ -1,11 +1,20 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      ESTUDO ELEITORAL 2019 &nbsp;<ion-icon name="close-circle" (click)="abortar()"></ion-icon>
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-title>
+              ESTUDO ELEITORAL 2019
+            </ion-title>
+          </ion-col>
+          <ion-col class="ion-text-right">
+            &nbsp;<ion-icon size="large" name="close-circle" (click)="sair()"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-header>
+  
 <ion-content>
   <ion-grid>
     <ion-row>

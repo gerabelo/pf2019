@@ -35,7 +35,7 @@ export class Question4Page implements OnInit {
       this.global.gotoHome()
     }
   }
-  private async abortar() {
+  private async sair() {
     const alertAbortar = await this.alertCtrl.create({
       backdropDismiss: false,
       header: `Deseja ABORTAR esta entrevista?`, 
