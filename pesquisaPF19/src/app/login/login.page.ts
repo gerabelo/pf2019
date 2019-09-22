@@ -19,13 +19,13 @@ export class LoginPage implements OnInit {
     private platform: Platform,
     private toastCtrl: ToastController
   ) {
-    this.subscribe = this.platform.backButton.subscribeWithPriority(6666666,() => {
-      if (this.constructor.name == "LoginPage") {
-        if (window.confirm("Deseja realmente SAIR da aplicação?")) {
-          navigator["app"].exitApp();
-        }
-      }
-    })
+    // this.subscribe = this.platform.backButton.subscribeWithPriority(6666666,() => {
+    //   if (this.constructor.name == "LoginPage") {
+    //     if (window.confirm("Deseja realmente SAIR da aplicação?")) {
+    //       navigator["app"].exitApp();
+    //     }
+    //   }
+    // })
   }
 
   ngOnInit() {
